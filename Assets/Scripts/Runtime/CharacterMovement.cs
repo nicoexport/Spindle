@@ -47,10 +47,14 @@ namespace Spindle.Runtime {
             get => animator.GetFloat(nameof(VelocityY));
             set => animator.SetFloat(nameof(VelocityY), value);
         }
-        
-        public bool IsGrounded => controller.isGrounded;
+
+        public bool IsGrounded {
+            get => animator.GetBool(nameof(IsGrounded));
+            set => animator.SetBool(nameof(IsGrounded), value);
+        }
         
         protected void FixedUpdate() {
+            IsGrounded = controller.isGrounded;
             controller.Move(Velocity * Time.deltaTime);
         }
 
