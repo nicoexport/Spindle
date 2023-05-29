@@ -51,7 +51,7 @@ namespace Spindle.Runtime {
         }
 
         void Gravity() {
-            if (!applyGravity) {
+            if (!applyGravity || attachedMovement.IsGrounded) {
                 return;
             }
 

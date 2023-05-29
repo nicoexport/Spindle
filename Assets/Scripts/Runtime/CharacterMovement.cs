@@ -1,4 +1,5 @@
 ﻿using System;
+using MyBox;
 using Slothsoft.UnityExtensions;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -9,6 +10,7 @@ namespace Spindle.Runtime {
         [SerializeField] CharacterController controller;
         [SerializeField] Animator animator;
         [field: SerializeField, Expandable] public MovementConfig Config { get; private set; }
+        
         
         public Vector3 MoveIntend {
             get => new Vector3(MoveIntendX, MoveIntendY, 0f);
@@ -45,6 +47,8 @@ namespace Spindle.Runtime {
             get => animator.GetFloat(nameof(VelocityY));
             set => animator.SetFloat(nameof(VelocityY), value);
         }
+        
+        public bool IsGrounded => controller.isGrounded;
         
         protected void FixedUpdate() {
             controller.Move(Velocity * Time.deltaTime);
