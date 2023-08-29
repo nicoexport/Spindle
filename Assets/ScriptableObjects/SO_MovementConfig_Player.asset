@@ -15,4 +15,4 @@ MonoBehaviour:
   <MaxVelocity>k__BackingField: 20
   <Drag>k__BackingField: 0.1
   <DecelerationMultiplier>k__BackingField: 2
-  <Gravity>k__BackingField: 3
+  <Gravity>k__BackingField: 2
